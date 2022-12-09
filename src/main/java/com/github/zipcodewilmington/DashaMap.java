@@ -11,7 +11,7 @@ public class DashaMap implements HashMapX{
 
     public DashaMap(){}
 
-    int charToIndex(char ch){return (ch - 'a');}
+    public int charToIndex(char ch){return (Character.toLowerCase(ch) - 'a');}
 
     public int keyToIndex(String str){
         char ch = 'a';
