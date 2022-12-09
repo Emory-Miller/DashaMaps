@@ -1,21 +1,21 @@
 package com.github.zipcodewilmington;
 
-public class Node<T extends Comparable<T>>{
+public class Node<KVdata extends Comparable<KVdata>>{
 
-    T data;
-    Node<T> next;
+    KVdata data;
+    Node<KVdata> next;
 
-    public Node(T data, Node<T> next) {
+    public Node(KVdata data, Node<KVdata> next) {
         this.data = data;
         this.next = next;
     }
 
-    public Node (T data){
+    public Node (KVdata data){
         this.data = data;
         this.next = null;
     }
 
-    public Node<T> getNext() {
+    public Node<KVdata> getNext() {
         return next;
     }
 
@@ -23,7 +23,7 @@ public class Node<T extends Comparable<T>>{
         return getNext() != null;
     }
 
-    public void setNext(Node<T> next) {
+    public void setNext(Node<KVdata> next) {
         this.next = next;
     }
 

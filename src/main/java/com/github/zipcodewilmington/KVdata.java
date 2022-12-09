@@ -1,23 +1,30 @@
 package com.github.zipcodewilmington;
 
-public class KVdata implements Comparable<KVdata>{
-    public String k;
-    public String v;
+public class KVdata implements Comparable<KVdata> {
+    public String key;
+    public Integer value;
 
     public KVdata() {
-        k = "";
-        v = "";
+        key = "";
+        value = 0;
     }
 
-    public KVdata(String k, String v) {
-        this.k = k;
-        this.v = v;
+    public KVdata(String key, Integer value) {
+        this.key = key;
+        this.value = value;
     }
 
-    public String key(){return this.k;}
+    public String getKey(){
+        return this.key;
+    }
+
+    public Integer getValue(){
+        return this.value;
+    }
 
     @Override
     public int compareTo(KVdata o) {
-        return 0;
+        if(o.key.equals(this.key)) return 0;
+        else return 1;
     }
 }

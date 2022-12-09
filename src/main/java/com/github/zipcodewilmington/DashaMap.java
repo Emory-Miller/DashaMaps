@@ -21,7 +21,7 @@ public class DashaMap implements HashMapX{
          return this.charToIndex(ch);
     }
     @Override
-    public void set(String key, String value) {
+    public void set(String key, Integer value) {
         KVdata toKeyValue = new KVdata(key, value);
         int index = this.keyToIndex(key);
         if (hashArray[index] == null) {
@@ -33,11 +33,11 @@ public class DashaMap implements HashMapX{
     @Override
     public String delete(String key) {
         int index = this.keyToIndex(key);
-        KVdata target = new KVdata(key, "");
+        KVdata target = new KVdata(key, 0);
         if (hashArray[index] == null){
             return null;
         }
-        int foundIndex = hashArray[index].find(target);
+        int foundIndex = hashArray[index].findByTarget(target);
         if (foundIndex == -1){
             return null;
         }
@@ -53,16 +53,16 @@ public class DashaMap implements HashMapX{
     @Override
     public String get(String key) {
         int index = this.keyToIndex(key);
-        KVdata target = new KVdata(key, "");
+        KVdata target = new KVdata(key, 0);
         if (hashArray[index] == null){
             return null;
         }
-        int foundIndex = hashArray[index].find(target);
+        int foundIndex = hashArray[index].findByTarget(target);
         if (foundIndex == -1){
             return null;
         }
         Node<KVdata> found = hashArray[index].get(foundIndex);
-        return String.valueOf(found.data);
+        return found.data.getValue().toString();
     }
 
     @Override

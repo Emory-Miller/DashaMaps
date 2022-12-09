@@ -13,12 +13,28 @@ public class DashaMapTest {
     @Test
     public void setTest(){
         DashaMap map = new DashaMap();
-        map.set("Dog", "Rudy");
+        map.set("Dog", 1);
 
-        String expected = "Rudy";
+        String expected = "1";
         String actual = map.get("Dog");
+        System.out.println(actual);
 
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void deleteTest(){
+
+        //TODO write tests....
+//        DashaMap map = new DashaMap();
+//        map.set("Dog", 1);
+//
+//        String expected = "1";
+//        String actual = map.get("Dog");
+//        System.out.println(actual);
+//
+//        Assert.assertEquals(expected, actual);
+    }
+
 
 }
